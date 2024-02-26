@@ -66,14 +66,14 @@
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <sup>1</sup>                                    
+              <sup>1</sup>
               Cornell&nbsp;
               <img src="static/images/cornell.png" alt="Cornell" style="float:right;width:30px;height:30px;">
             </span>
             <span class="author-block">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>2</sup>
               Princeton&nbsp;
-              <img src="static/images/princeton.svg" alt="Princeton" style="float:right;width:30px;height:30px;"> 
+              <img src="static/images/princeton.svg" alt="Princeton" style="float:right;width:30px;height:30px;">
             </span>
             <span class="author-block">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>3</sup>
@@ -94,7 +94,7 @@
               </span>
               <!-- Github link -->
               <span class="link-block">
-                <a href="https://github.com/YOUR REPO HERE" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://github.com/kuleshov-group/caduceus" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fab fa-github"></i>
                   </span>
@@ -166,7 +166,7 @@
             <h2 class="subtitle has-text-centered">
               Reverse complement strands carry equivalent information.
             </h2>
-          </div>  
+          </div>
         </div>
       </div>
     </div>
@@ -203,7 +203,7 @@
         Specifically, we start by leveraging the recently proposed Mamba block (<a href="https://arxiv.org/abs/2312.00752" target="_blank">Gu et al. (2023)</a>) that uses a selective state space model for long-range sequence modeling, rivaling the performance of Transformer-based models.
         Using this module, we develop <b>BiMamba</b>, a parameter/memory-efficienct, bi-directional version of Mamba.
         BiMamba is implemented by running a Mamba module on both a sequence and its reverse, with in and out projection weights tied.
-        We also introduce <b>MambaDNA</b>, a module that extends Mamba / BiMamba to support reverse complement equivariance.        
+        We also introduce <b>MambaDNA</b>, a module that extends Mamba / BiMamba to support reverse complement equivariance.
       </p>
     </div>
   </div>
@@ -213,7 +213,7 @@
 <section class="section" id="Caduceus">
   <div class="container is-max-desktop">
     <h2 class="title">Caduceus</h2>
-    <img src="static/images/caduceus_arch.png" alt="Caduceus Architecture" style="float:left;padding-right:50px;height:350px;"> 
+    <img src="static/images/caduceus_arch.png" alt="Caduceus Architecture" style="float:left;padding-right:50px;height:350px;">
     <div class="content">
       <p>
         Using the sequence modeling blocks introduced above, we build <b>Caduceus</b>, a novel bi-directional DNA LM architecture that enforces RC equivariance.
@@ -225,7 +225,7 @@
     </div>
   </div>
   <br><br><br><br><br><br>
-  <div class="container is-max-desktop"> 
+  <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <div id="results-carousel" class="carousel results-carousel">
@@ -257,9 +257,9 @@
       At varying sequence lengths and comparable model sizes, a standard Mamba model attains lower perplexity on the pre-training data test set compared to HyenaDNA.
       These results lend support to our choice of Mamba as the inner building block of our models.
       Additionally, we find that RC equivariant LM leads to better masked language modeling pre-training loss (see figure below on the right).
-      This is significant because, as described above, performance on the MLM task has grounding in the biology of downstream tasks, such as variant effect prediction.
+      This is significant because performance on the MLM task has grounding in the biology of downstream tasks, such as variant effect prediction.
     </div>
-    <div class="container is-max-desktop"> 
+    <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="item">
           <img src="static/images/experiments/mamba_pretraining.png" alt="Ablating the effect of RC equivariance on pre-training" style="float:left;height:300px;"/>
@@ -269,7 +269,7 @@
         </div>
       </div>
     </div>
-    <div class="container is-max-desktop"> 
+    <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-four-fifths">
           <div id="results-carousel" class="carousel results-carousel">
@@ -309,7 +309,7 @@
         We stratify the data by distance of the SNP to nearest Transcription Start Site (TSS).
         For each bucket, we sample 5,000 training points and fit an SVM classifier with an RBF kernel to predict VEP annotations.
         We report test set AUCROC mean and max/min ranges for classifiers fit on 5 random training subsets.
-        We compare Caduceus to HyenaDNA and Nucleotide Transformer. 
+        We compare Caduceus to HyenaDNA and Nucleotide Transformer.
         As shown in the figure below the Caduceus models consistently outperform HyenaDNA, and Caduceus-PS exceeds the performance of the Nucleotide Transformer v2 (with 500M parameters) by a large margin, especially as  distance to the nearest TSS grows.
       </p>
     </div>
@@ -363,7 +363,7 @@
 </footer>
 
 <!-- Statcounter tracking code -->
-  
+
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
