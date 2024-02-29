@@ -118,23 +118,44 @@
   </div>
 </section>
 
-<!-- Paper abstract -->
+<!-- Caduceus image -->
 <section class="section hero">
   <div class="container is-max-desktop">
-    <img src="static/images/caduceus.png" alt="Caduceus" style="float:left;margin:100px 0px;width:300px;height:300px;">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p><em>
-            Large-scale sequence modeling has sparked rapid advances that now extend into biology and genomics. However, modeling genomic sequences introduces challenges such as the need to model long-range token interactions, the effects of upstream and downstream regions of the genome, and the reverse complementarity (RC) of DNA. Here, we propose an architecture motivated by these challenges that builds off the long-range Mamba block, and extends it to a BiMamba component that supports bi-directionality, and to a MambaDNA block that additionally supports RC equivariance. We use MambaDNA as the basis of Caduceus, the first family of RC equivariant bi-directional long-range DNA language models, and we introduce pre-training and fine-tuning strategies that yield Caduceus DNA foundation models. Caduceus outperforms previous long-range models on downstream benchmarks; on a challenging long-range variant effect prediction task, Caduceus exceeds the performance of 10x larger models that do not leverage bi-directionality or equivariance.
-          </em></p>
-        </div>
-      </div>
+    <img src="static/images/caduceus.png" alt="Caduceus" style="width:300px;height:300px;">
+  </div>
+</section>
+
+<!-- Introduction -->
+<section class="section" id="Introduction">
+  <div class="container is-max-desktop">
+    <h2 class="title">DNA: The Next Frontier of Language Modeling?</h2>
+    <div class="content is-medium">
+      Large-scale sequence models have sparked rapid progress in machine learning, bringing about advances that extend beyond natural language processing into science, biology, and medicine.
+      In proteomics, these models have enabled predicting protein structures from sequences, deciphering the functions and interactions of amino acids, and crafting new molecules.
+      Building off these successes, DNA language models (LM) present an exciting frontier for sequence modeling.
+      Understanding the fundamental material of biology holds the promise of accelerating the discovery of new drugs and providing new insights into the genetic basis of diseases.
     </div>
   </div>
 </section>
-<!-- End paper abstract -->
+<!-- End Introduction-->
+
+<!--Intro Caduceus-->
+<section class="section" id="Intro Caduceus">
+  <div class="container is-max-desktop">
+    <h2 class="title">Introducing Caduceus</h2>
+    <div class="content is-medium">
+      In our work, we introduce several architectural innovations specifically designed to tackle the unique challenges of modeling DNA sequences that build on the recently proposed Mamba module (<a href="https://arxiv.org/abs/2312.00752" target="_blank">Gu et al. (2023)</a>).
+      We use these new blocks as the basis of Caduceus, a family of bidirectional long-range DNA sequence models that is the first language model to respect the reverse complement (RC) symmetry of the double-stranded structure of DNA.
+      We further introduce pre-training and fine-tuning strategies that yield Caduceus foundation models for a wide range of predictive tasks in genomics.
+      The Caduceus models consistently outperform previous state space model (SSM) based LMs of a similar size in terms of downstream performance.
+      On many tasks, especially ones that require long-range modeling, Caduceus also outperforms 10x larger Transformer-based models.          
+    </div>
+    <div class="columns is-centered">
+      <img src="static/images/caduceus_highlights.png" alt="Highlights of Caduceus"/>
+    </div>
+  </div>
+</section>
+<!-- End Intro Caduceus--->
 
 <!-- DNA LM -->
 <section class="section" id="DNA_LM">
@@ -144,25 +165,25 @@
       <div class="column is-four-fifths">
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
-            <img src="static/images/why_dna/Slide1.png" alt="Why DNA i"/>
+            <img src="static/images/why_dna/Slide1.png" alt="Challenges in DNA"/>
             <h2 class="subtitle has-text-centered">
               Challenges in DNA LM.
             </h2>
           </div>
           <div class="item">
-            <img src="static/images/why_dna/Slide2.png" alt="MY ALT TEXT"/>
+            <img src="static/images/why_dna/Slide2.png" alt="DNA folding and coiling enables distal base pair interactions"/>
             <h2 class="subtitle has-text-centered">
               DNA folding and coiling enables distal base pair interactions.
             </h2>
           </div>
           <div class="item">
-            <img src="static/images/why_dna/Slide3.png" alt="MY ALT TEXT"/>
+            <img src="static/images/why_dna/Slide3.png" alt="Upstream and downstream effects require bi-directional modeling"/>
             <h2 class="subtitle has-text-centered">
               Upstream and downstream effects require bi-directional modeling.
             </h2>
           </div>
           <div class="item">
-            <img src="static/images/why_dna/Slide4.png" alt="MY ALT TEXT"/>
+            <img src="static/images/why_dna/Slide4.png" alt="Reverse complement strands carry equivalent information"/>
             <h2 class="subtitle has-text-centered">
               Reverse complement strands carry equivalent information.
             </h2>
@@ -171,7 +192,7 @@
       </div>
     </div>
     <br>
-    <div class="content">
+    <div class="content is-medium">
       <p>
         Modeling DNA introduces challenges that are distinct from those posed by natural language or proteins.
         First, many genomics tasks, such as predicting the effect of variants on gene expression, can entail <b>long-range interactions</b>, as nucleic acids even up to 1 million base pairs away from a given gene can have significant regulatory effects.
@@ -186,7 +207,7 @@
 <!-- Blocks -->
 <section class="section" id="Blocks">
   <div class="container is-max-desktop">
-    <h2 class="title">DNA Sequence Operators</h2>
+    <h2 class="title">Extending Mamba for DNA</h2>
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <video poster="" id="tree" autoplay controls muted loop height="100%">
@@ -197,7 +218,7 @@
       </div>
     </div>
     <br>
-    <div class="content">
+    <div class="content is-medium">
       <p>
         We introduce sequence modeling modules that can be applied across domains, but are specifically tailored to DNA.
         Specifically, we start by leveraging the recently proposed Mamba block (<a href="https://arxiv.org/abs/2312.00752" target="_blank">Gu et al. (2023)</a>) that uses a selective state space model for long-range sequence modeling, rivaling the performance of Transformer-based models.
@@ -213,8 +234,8 @@
 <section class="section" id="Caduceus">
   <div class="container is-max-desktop">
     <h2 class="title">Caduceus</h2>
-    <img src="static/images/caduceus_arch.png" alt="Caduceus Architecture" style="float:left;padding-right:50px;height:350px;">
-    <div class="content">
+    <img src="static/images/caduceus_arch.png" alt="Caduceus Architecture" style="float:left;padding-right:50px;height:375px;">
+    <div class="content is-medium">
       <p>
         Using the sequence modeling blocks introduced above, we build <b>Caduceus</b>, a novel bi-directional DNA LM architecture that enforces RC equivariance.
         RC equivariance can be enforced in one of two ways.
@@ -224,24 +245,13 @@
       </p>
     </div>
   </div>
-  <br><br><br><br><br><br>
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item">
-            <img src="static/images/caduceus/Slide1.png" alt="Highlights of Caduceus"/>
-            <h2 class="subtitle has-text-centered">
-            </h2>
-          </div>
-          <div class="item">
-            <img src="static/images/caduceus/Slide2.png" alt="Comparison to other DNA LMs"/>
-            <h2 class="subtitle has-text-centered">
-              Comparing Caduceus to other DNA LMs.
-            </h2>
-          </div>
-        </div>
-      </div>
+  <br>
+  <div class="columns is-centered">
+    <div class="item">
+      <img src="static/images/caducues_comparison.png" alt="Comparison to other DNA LMs"/>
+      <h2 class="subtitle has-text-centered">
+        Comparing to other DNA LMs.
+      </h2>
     </div>
   </div>
 </section>
@@ -251,9 +261,9 @@
 <section class="section" id="Experiments">
   <div class="container is-max-desktop">
     <h2 class="title">Experiments</h2>
-    <div class="content">
+    <div class="content is-medium">
       We pre-trained models on the human reference genome.
-      Similar to the preliminary results in <a href="https://arxiv.org/abs/2312.00752" target="_blank">Gu et al. (2023)</a>, we find that the Mamba module performs better than Hyena in terms of next token prediction (see figure below on the left).
+      Similar to the preliminary results in <a href="https://arxiv.org/abs/2312.00752" target="_blank">Gu et al. (2023)</a>, we find that the Mamba module performs better than Hyena (<a href="https://arxiv.org/abs/2306.15794" target="_blank">Nguyen et al. (2023)</a>) in terms of next token prediction (see figure below on the left).
       At varying sequence lengths and comparable model sizes, a standard Mamba model attains lower perplexity on the pre-training data test set compared to HyenaDNA.
       These results lend support to our choice of Mamba as the inner building block of our models.
       Additionally, we find that RC equivariant LM leads to better masked language modeling pre-training loss (see figure below on the right).
@@ -263,30 +273,16 @@
       <div class="columns is-centered">
         <div class="item">
           <img src="static/images/experiments/mamba_pretraining.png" alt="Ablating the effect of RC equivariance on pre-training" style="float:left;height:300px;"/>
-        <!-- </div> -->
-        <!-- <div class="item"> -->
           <img src="static/images/experiments/rc_pretraining.png" alt="Ablating the effect of RC equivariance on pre-training" style="height:500px;"/>
         </div>
       </div>
     </div>
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-four-fifths">
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="item">
-              <h2 class="subtitle has-text-centered">
-                Comparing Caduceus to other DNA LMs.
-              </h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="content">
-      We evaluate models on a range of biologically relevant downstream tasks.
+    <br><br>
+    <div class="content is-medium">
+      We evaluate models on a range of biologically relevant downstream tasks, as described below.
     </div>
     <h2 class="subtitle"> Nucleotide Transformer Benchmark</h2>
-    <div class="content">
+    <div class="content is-medium">
       <p>
         One set of benchmarks comes from the suite of tasks introduced in Nucleotide Transformer (<a href="https://www.biorxiv.org/content/10.1101/2023.01.11.523679v1" target="_blank">Dalla-Torre et al. (2023)</a>).
         We find that Caduceus-Ph performs competitively, even beating attention-based methods with orders of magnitude more parameters on 8 of 18 prediction tasks.
@@ -299,7 +295,7 @@
       </div>
     </div>
   <h2 class="subtitle"> Predicting the Effect of Variants on Gene Expression</h2>
-    <div class="content">
+    <div class="content is-medium">
       <p>
         We explore the implications of long-range contexts on the task of predicting the effect of SNPs on gene expression.
         There is biological evidence to suggest this task indeed entails long-range interactions.
@@ -325,7 +321,7 @@
 <section class="section" id="Conclusion">
   <div class="container is-max-desktop">
     <h2 class="title">Conclusion</h2>
-    <div class="content">
+    <div class="content is-medium">
       <p>
         In this work, we introduced architectural innovations to the Mamba module: enabling bi-directional and RC equivariant sequence modeling.
         We also propose a new DNA foundation model, Caduceus, and demonstrate its ability to outperform comparably sized uni-directional Hyena-based models and Transformer-based models orders of magnitude larger in size on a range of biologically relevant tasks, most notably predicting the effect of genetic mutations on gene expression.
@@ -348,7 +344,7 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
-        <div class="content">
+        <div class="content is-medium">
 
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
@@ -364,9 +360,9 @@
 
 <!-- Statcounter tracking code -->
 
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
-    <!-- End of Statcounter Code -->
+<!-- End of Statcounter Code -->
 
-  </body>
-  </html>
+</body>
+</html>
