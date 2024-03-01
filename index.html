@@ -264,16 +264,17 @@
     <div class="content is-medium">
       We pre-trained models on the human reference genome.
       Similar to the preliminary results in <a href="https://arxiv.org/abs/2312.00752" target="_blank">Gu et al. (2023)</a>, we find that the Mamba module performs better than Hyena (<a href="https://arxiv.org/abs/2306.15794" target="_blank">Nguyen et al. (2023)</a>) in terms of next token prediction (see figure below on the left).
-      At varying sequence lengths and comparable model sizes, a standard Mamba model attains lower perplexity on the pre-training data test set compared to HyenaDNA.
-      These results lend support to our choice of Mamba as the inner building block of our models.
-      Additionally, we find that RC equivariant LM leads to better masked language modeling pre-training loss (see figure below on the right).
-      This is significant because performance on the MLM task has grounding in the biology of downstream tasks, such as variant effect prediction.
+      This result lend support to our choice of Mamba as the inner building block of our models.
+      Additionally, we find that the efficient parameter usage of BiMamba, which allows us to train deeper models for comparable parameter counts relative to not using weight tying, leads to better pre-train performance (see the middle figure below). 
+      Finally, we find that RC equivariant LM leads to better masked language modeling pre-training loss (see figure below on the right).
+      These results are significant because performance on the MLM task has grounding in the biology of downstream tasks, such as variant effect prediction.
     </div>
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="item">
-          <img src="static/images/experiments/mamba_pretraining.png" alt="Ablating the effect of RC equivariance on pre-training" style="float:left;height:300px;"/>
-          <img src="static/images/experiments/rc_pretraining.png" alt="Ablating the effect of RC equivariance on pre-training" style="height:500px;"/>
+          <img src="static/images/experiments/pretrain.png" alt="Ablating the effect of RC equivariance on pre-training"/>
+          <!-- <img src="static/images/experiments/mamba_pretraining.png" alt="Ablating the effect of RC equivariance on pre-training" style="float:left;height:300px;"/> -->
+          <!-- <img src="static/images/experiments/rc_pretraining.png" alt="Ablating the effect of RC equivariance on pre-training" style="height:500px;"/> -->
         </div>
       </div>
     </div>
