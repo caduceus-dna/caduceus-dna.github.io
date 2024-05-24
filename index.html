@@ -305,9 +305,10 @@
         From each model, we extract embeddings centered around the SNP location.
         We stratify the data by distance of the SNP to nearest Transcription Start Site (TSS).
         For each bucket, we sample 5,000 training points and fit an SVM classifier with an RBF kernel to predict VEP annotations.
-        We report test set AUCROC mean and max/min ranges for classifiers fit on 5 random training subsets.
-        We compare Caduceus to HyenaDNA and Nucleotide Transformer.
-        As shown in the figure below the Caduceus models consistently outperform HyenaDNA, and Caduceus-PS exceeds the performance of the Nucleotide Transformer v2 (with 500M parameters) by a large margin, especially as  distance to the nearest TSS grows.
+        We report test set AUCROC mean +/- standard deviation ranges for classifiers fit on 5 random training subsets.
+        We compare Caduceus to HyenaDNA, Nucleotide Transformer, and the suprevised baseline Enformer.
+        As shown in the figure below the Caduceus models consistently outperform HyenaDNA, and Caduceus-PS exceeds the performance of the Nucleotide Transformer v2 (with 500M parameters), especially as  distance to the nearest TSS grows.
+        Of note, on sequences where distance to TSS exceeds 100k, Caduceus even outperforms the well-regarded Enformer baseline.
       </p>
     </div>
     <div class="columns is-centered">
